@@ -1,0 +1,43 @@
+redpanda:
+  adminApi:
+    enabled: true
+    urls:
+      - http://osp-redpanda-0.osp-redpanda.osp-redpanda.svc.cluster.local:9644
+      - http://osp-redpanda-1.osp-redpanda.osp-redpanda.svc.cluster.local:9644
+      - http://osp-redpanda-2.osp-redpanda.osp-redpanda.svc.cluster.local:9644
+    username: consoleread
+    tls:
+      caFilepath: /etc/tls/certs/default/ca.crt
+      certFilepath: /etc/tls/certs/default/tls.crt
+      enabled: false
+      insecureSkipTlsVerify: false
+      keyFilepath: /etc/tls/certs/default/tls.key
+kafka:
+  brokers:
+    - osp-redpanda-0.osp-redpanda.osp-redpanda.svc.cluster.local:9093
+    - osp-redpanda-1.osp-redpanda.osp-redpanda.svc.cluster.local:9093
+    - osp-redpanda-2.osp-redpanda.osp-redpanda.svc.cluster.local:9093
+  clientId: console-client
+  sasl:
+    enabled: true
+    mechanism: SCRAM-SHA-512
+    username: consoleread
+  schemaRegistry:
+    enabled: true
+    tls:
+      caFilepath: /etc/tls/certs/default/ca.crt
+      certFilepath: /etc/tls/certs/default/tls.crt
+      enabled: false
+      insecureSkipTlsVerify: false
+      keyFilepath: /etc/tls/certs/default/tls.key
+    urls:
+      - http://osp-redpanda-0.osp-redpanda.osp-redpanda.svc.cluster.local:8081
+      - http://osp-redpanda-1.osp-redpanda.osp-redpanda.svc.cluster.local:8081
+      - http://osp-redpanda-2.osp-redpanda.osp-redpanda.svc.cluster.local:8081
+    username: consoleread
+  tls:
+    caFilepath: /etc/tls/certs/default/ca.crt
+    certFilepath: /etc/tls/certs/default/tls.crt
+    enabled: false
+    insecureSkipTlsVerify: false
+    keyFilepath: /etc/tls/certs/default/tls.key

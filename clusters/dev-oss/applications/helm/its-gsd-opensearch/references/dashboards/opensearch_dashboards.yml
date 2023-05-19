@@ -1,0 +1,29 @@
+#logging:
+#root:
+#level:all
+#verbose: true
+server:
+  name: dashboards
+  host: "{{.Values.serverHost}}"
+  ssl:
+    enabled: true
+    key: /usr/share/opensearch-dashboards/config/certs/node1-key.pem
+    certificate: /usr/share/opensearch-dashboards/config/certs/node1.pem
+opensearch:
+  username: "kibanaserver"
+  password: "9MUubaMwb6uQb7hQ"
+  requestHeadersWhitelist: ["securitytenant","Authorization"]
+  ssl:
+    verificationMode: full
+    #verificationMode: certificate
+    #key: /usr/share/opensearch-dashboards/config/certs/node1-key.pem
+    #certificate: /usr/share/opensearch-dashboards/config/certs/node1.pem
+    certificateAuthorities: /usr/share/opensearch-dashboards/config/certs/root-ca.pem
+opensearch_security:
+  multitenancy:
+    enabled: true
+    enable_filter: false
+    tenants:
+      enable_global: true
+      enable_private: true
+      preferred: ["Private", "Global"]

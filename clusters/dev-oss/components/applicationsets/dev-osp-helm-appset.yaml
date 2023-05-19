@@ -1,0 +1,54 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: dev-osp-helm
+  namespace: argocd
+spec:
+  goTemplate: true
+
+  generators:
+    - git:
+        repoURL: https://git.dhl.com/DATA-LAKE-10108/oss-gitops.git
+        revision: HEAD
+        files:
+          - path: "clusters/dev-oss/applications/helm/**/app-config.json"
+
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+
+  template:
+    metadata:
+      name: 'dev-osp-{{ index (splitList "/" .path.path) 4 }}'
+      labels:
+        meta.dpdhl.com/notify-slack: "true"
+        app: '{{ index (splitList "/" .path.path) 4 }}'
+    spec:
+      project: dev-oss
+
+      source:
+        repoURL: https://git.dhl.com/DATA-LAKE-10108/oss-gitops.git
+        targetRevision: HEAD
+        path: "{{ .path.path }}"
+        helm:
+          releaseName: '{{ default (index (splitList "/" .path.path) 4) .releaseName }}'
+          valueFiles:
+            - '/common-values/{{ index (splitList "/" .path.path) 4 }}/values-common.yaml'
+            - values.yaml
+
+      destination:
+        name: in-cluster
+        namespace: "{{ .namespace }}"
+
+      syncPolicy:
+        # automated:
+        #   prune: true
+        #   selfHeal: true
+        syncOptions:
+          - "CreateNamespace={{ default false .syncOptions.CreateNamespace }}"
+          - "ApplyOutOfSyncOnly={{ default false .syncOptions.ApplyOutOfSyncOnly }}"
+          - "ServerSideApply={{ default false .syncOptions.ServerSideApply }}"
+          - "FailOnSharedResource={{ default false .syncOptions.FailOnSharedResource }}"
+          - "Validate={{ default true .syncOptions.Validate }}"
+          - "Replace={{ default false .syncOptions.replace }}"
+          - "PruneLast={{ default false .syncOptions.PruneLast }}"

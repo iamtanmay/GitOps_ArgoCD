@@ -1,0 +1,6 @@
+{
+    "namespace": "oss-thanos",
+    "syncOptions": {
+        "CreateNamespace": true
+    }
+}

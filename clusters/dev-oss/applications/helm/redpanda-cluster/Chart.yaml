@@ -1,0 +1,11 @@
+apiVersion: v2
+name: osp-redpanda
+description: A Helm chart for redpanda
+type: application
+version: 4.0.14
+appVersion: v23.1.8
+
+dependencies:
+  - name: redpanda
+    repository: https://artifactory.dhl.com/artifactory/redpanda-helm-remote/
+    version: 4.0.14

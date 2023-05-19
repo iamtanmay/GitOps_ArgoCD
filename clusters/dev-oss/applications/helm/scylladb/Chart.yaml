@@ -1,0 +1,11 @@
+apiVersion: v2
+name: scylla-operator
+description: A Helm chart for scylladb
+type: application
+version: 0.1.0
+appVersion: "1.8.0"
+
+dependencies:
+  - name: scylla-operator
+    repository: https://scylla-operator-charts.storage.googleapis.com/stable
+    version: v1.8.1

@@ -1,0 +1,6 @@
+{
+    "namespace": "oss-its-gsd-opensearch",
+    "syncOptions": {
+        "CreateNamespace": true
+    }
+}

@@ -1,0 +1,24 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: oss-gitops-repo
+  namespace: argocd
+spec:
+  encryptedData:
+    type: AgCv50QYsQF64kGAaXR3TQbHxKqrVTZalrPc5milJvnAVe9gfTcrwzvXrO0Jt02jlhNXQBEuhHw0U09bEKL81i4NX/DKzuE5ipNu2u9Tq60V/X84nt4CMRvqL/bdmoib31i/0LlUoNQIOgHWSWKTk3HxsLXlKxJaCRrQqI+XlfFonLLu5spQZPHFBgNApBVczyrGQ2npZ2j5BKjNZkxyXGl4IOoSZCawHHrUYypKF5TKQoiBFq7A4ojl2BNbYxy/86RCe2kmLjB+eJeD1aA8BBKsTS9eGsz9FYRMBxE3DahBwUg1ygwN7QfmZIdOsrJNCLvhFWk1eez17UmBIqctPAhyp15u247OXJCvwgy8Qm5E/0GNEmUazSXjadpeCn5x8vAV791HWeNgrX1EOm4ckk4DPfBCJgUQoDYWLK38IUc/WQrPhqrYOblS/Boefkp+dT3WzOg9r99O69IeIYm8KkHjiXGnbL/G9UUPtp2YEl1bjohWAN1dNyFlW4Bv2iG65QPqTFP1rGOFNh0haSHwMiXrIbEpW4x9ZjExXuIaHk70nSaYhBP/Mk7Tr3ABmFhicoCwaVvmiYPwfYdDGtklL8ILQ9ItYIy1XrJzKf9MSFD0O33Pd/+OJFSCYii2ibMw9A/FSf9Qm6N26j+e50WG4UqytX5vASSdk0SseUhjphuSetbHK8XlRZr8yixkoRL3Ufbdlw4=
+    url: AgCPQVQBrNVgTgHyERCyifqoNhWfJ3D/vjZlEZis3OF39AO8G0Arsf2OIPTw/DTobfbPcx86PJHGzjIPX3Ugq+ZC4MSjDSQcLkVWno52dlzJBoztk+ieUhJ5Ht29F51QyGOC7Zvboxx0Jckw6h/4wTwEchH/GO+48pd1+ku9y6DmP+qlK3c8qntikjszhXis6inn8MKCMGdrD0fZm8lz1uNtCdO46DuSWSjRGVtqTpgBnCSnd0R/g9W7DrZmdECDOiQ8/6QwrFS5+zTqYiTXMkGWyzFqaSHDcZScyAuLyAXNTM82hjHqw0Lzcz7v3UhQyaqLmVfzBguTdWY/zjmgYXqgok8Zi6f9/tzMUm44XdNwFkogl6MHxxzBv9B3X9H9WWF3eugYUL5u2NVSBKm+ndq/AWbaalHc4jb07EdbO5uLgfu1nkHvdqcBbw2c7CAiL8Pqc/2BYrnKOrbePyOh6cmnV56rg9f8abhelp1VEsOyJdH2qxlTQH8d7CrZAjIPN5LOt+Wmj5r0E1lBHjpH7Cx9xs3pRXA6ESdDCA13Jp4snR4+X44cwiWcB7abZuAfW7kPNpQtbKIU5Gy49RWWXlqLxpzmI+RHQMTxWYeBaY5fp6hL32gl/FZOgbT10/MqUYaQUbPCLbluWKcMBHUyQqn4OlesNpgj+uAzRD3U047D738XcI5uN8E1WrQvp+HWGqHMjSS9LPNcFYpTr+CKjdxw0nBNTeoTB2t7i50fVvdh7fDqb+8MQwT3xPuhstNi
+  template:
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      labels:
+        argocd.argoproj.io/secret-type: repository
+      name: oss-gitops-repo
+      namespace: argocd
+    type: Opaque
+

@@ -1,0 +1,34 @@
+kafka:
+  brokers:
+    - osp-redpanda-0.osp-redpanda.osp-redpanda.svc.cluster.local:9093
+    - osp-redpanda-1.osp-redpanda.osp-redpanda.svc.cluster.local:9093
+    - osp-redpanda-2.osp-redpanda.osp-redpanda.svc.cluster.local:9093
+  clientId: kminion
+  sasl:
+    enabled: true
+    mechanism: SCRAM-SHA-512
+    username: ossredpanda
+  tls:
+    caFilepath: /etc/tls/certs/default/ca.crt
+    certFilepath: /etc/tls/certs/default/tls.crt
+    enabled: false
+    insecureSkipTlsVerify: false
+    keyFilepath: /etc/tls/certs/default/tls.key
+logger:
+  level: info
+minion:
+  consumerGroups:
+    allowedGroups:
+      - /.*/
+    enabled: true
+    granularity: topic
+    scrapeMode: adminApi
+  logDirs:
+    enabled: true
+  topics:
+    allowedTopics:
+      - /.*/
+    granularity: partition
+    infoMetric:
+      configKeys:
+        - cleanup.policy
