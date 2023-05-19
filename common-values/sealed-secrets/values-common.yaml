@@ -1,0 +1,4 @@
+---
+# values provided for the `real` Helm Chart
+sealed-secrets:
+  nameOverride: controller
