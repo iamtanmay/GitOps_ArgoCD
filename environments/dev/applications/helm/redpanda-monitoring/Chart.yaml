@@ -1,0 +1,19 @@
+apiVersion: v2
+name: osp-redpanda
+description: A Helm chart for redpanda-monitoring
+type: application
+version: 0.5.8
+appVersion: "v23.1.8"
+
+dependencies:
+  - name: console
+    alias: admin
+    repository: https://artifactory.dhl.com/artifactory/redpanda-helm-remote/
+    version: 0.6.2
+  - name: console
+    alias: client
+    repository: https://artifactory.dhl.com/artifactory/redpanda-helm-remote/
+    version: 0.6.2
+  - name: kminion
+    repository: https://raw.githubusercontent.com/redpanda-data/kminion/master/charts/archives
+    version: 0.11.2

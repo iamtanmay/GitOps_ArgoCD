@@ -1,0 +1,6 @@
+dependencies:
+- name: actions-runner-controller
+  repository: https://artifactory.dhl.com/artifactory/actions-runner-controller-helm-remote/
+  version: 0.23.3
+digest: sha256:5063270f49503e5efdcd2918f5e1d1f07ce6293cee3e4e6ac798cfc43744604f
+generated: "2023-05-12T15:32:27.845028585Z"

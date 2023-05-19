@@ -1,0 +1,11 @@
+apiVersion: v2
+name: oss-airflow
+description: A Helm chart for airflow
+type: application
+version: 0.1.0
+appVersion: "1.8.0"
+
+dependencies:
+  - name: airflow
+    repository: https://airflow.apache.org
+    version: 1.8.0

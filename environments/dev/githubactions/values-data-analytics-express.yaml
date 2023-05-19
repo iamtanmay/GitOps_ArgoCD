@@ -1,0 +1,24 @@
+---
+releaseName: "data-analytics-express"
+namespace: "gha-arc-data-analytics-express"
+
+arc:
+  githubWebhookServer:
+    useRunnerGroupsVisibility: true
+    enabled: true
+    secret:
+      enabled: true
+      name: "gha-arc-data-analytics-express-secret"
+    ingress:
+      enabled: true
+      hosts:
+        - host: data-analytics-express-runner-webhook.apps-oss.datalake.dhl.com
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+  leaderElectionId: "arc-data-analytics-express"
+  authSecret:
+    name: "gha-arc-data-analytics-express-secret"
+  scope:
+    singleNamespace: true
+    watchNamespace: "gha-arc-data-analytics-express"

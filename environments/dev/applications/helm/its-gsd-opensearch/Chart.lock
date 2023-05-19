@@ -1,0 +1,9 @@
+dependencies:
+- name: opensearch
+  repository: https://artifactory.dhl.com/artifactory/opensearch-helm-remote/
+  version: 2.12.0
+- name: opensearch-dashboards
+  repository: https://artifactory.dhl.com/artifactory/opensearch-helm-remote/
+  version: 2.10.0
+digest: sha256:6d4c236c637fe3c30c6bad767959fc509a58ba63133dc4ddeada53622a1cdcd2
+generated: "2023-05-02T23:34:08.04482972Z"

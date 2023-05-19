@@ -1,0 +1,31 @@
+{{/*{{- range tuple "0" "1" "2" }}*/}}
+{{/*apiVersion: v1*/}}
+{{/*kind: PersistentVolume*/}}
+{{/*metadata:*/}}
+{{/*  name: osp-redpanda-{{ . }}*/}}
+{{/*  labels:*/}}
+{{/*    name: {{ . }}*/}}
+{{/*    namespace: osp-redpanda*/}}
+{{/*spec:*/}}
+{{/*  storageClassName: maprfs-fuse-storage*/}}
+{{/*  claimRef:*/}}
+{{/*    name: datadir-osp-redpanda-{{ . }}*/}}
+{{/*    namespace: osp-redpanda*/}}
+{{/*  accessModes:*/}}
+{{/*    - ReadWriteMany*/}}
+{{/*  persistentVolumeReclaimPolicy: Retain*/}}
+{{/*  capacity:*/}}
+{{/*    storage: 1000Gi*/}}
+{{/*  csi:*/}}
+{{/*    nodePublishSecretRef:*/}}
+{{/*      name: osp-redpanda-mapr*/}}
+{{/*      namespace: osp-redpanda*/}}
+{{/*    driver: com.mapr.csi-kdf*/}}
+{{/*    volumeHandle: maprfs-pv-redpanda*/}}
+{{/*    volumeAttributes:*/}}
+{{/*      volumePath: "/oss-redpanda-{{ . }}"*/}}
+{{/*      cldbHosts: czchols4222.prg-dc.dhl.com czchols4223.prg-dc.dhl.com czchols4224.prg-dc.dhl.com*/}}
+{{/*      cluster: datalake-dev.dhl.com*/}}
+{{/*      securityType: "secure"*/}}
+{{/*---*/}}
+{{/*{{end}}*/}}

@@ -1,0 +1,19 @@
+---
+arc:
+  image:
+    actionsRunnerRepositoryAndTag: docker.artifactory.dhl.com/rancher-docker-dev/dpdhl-gha-runner:latest
+  serviceAccount:
+    create: true
+  githubEnterpriseServerURL: "https://git.dhl.com"
+  metrics:
+    serviceMonitor: true
+    proxy:
+      enabled: true
+      image:
+        repository: brancz/kube-rbac-proxy
+  githubWebhookServer:
+    enabled: true
+    secret:
+      enabled: true
+    serviceAccount:
+      create: true

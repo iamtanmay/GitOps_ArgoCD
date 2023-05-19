@@ -1,0 +1,12 @@
+dependencies:
+- name: console
+  repository: https://artifactory.dhl.com/artifactory/redpanda-helm-remote/
+  version: 0.6.2
+- name: console
+  repository: https://artifactory.dhl.com/artifactory/redpanda-helm-remote/
+  version: 0.6.2
+- name: kminion
+  repository: https://raw.githubusercontent.com/redpanda-data/kminion/master/charts/archives
+  version: 0.11.2
+digest: sha256:a9c3f383587dc705c47f2193c3a053cf9b65eb6cad32c0742e0ebe7bfdcc82b1
+generated: "2023-05-08T21:33:20.132959348Z"

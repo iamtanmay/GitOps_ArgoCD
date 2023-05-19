@@ -1,0 +1,24 @@
+---
+releaseName: "dna"
+namespace: "gha-arc-dna"
+
+arc:
+  githubWebhookServer:
+    useRunnerGroupsVisibility: true
+    enabled: true
+    secret:
+      enabled: true
+      name: "gha-arc-dna-secret"
+    ingress:
+      enabled: true
+      hosts:
+        - host: dna-runner-webhook.apps-oss.datalake.dhl.com
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+  leaderElectionId: "arc-dna"
+  authSecret:
+    name: "gha-arc-dna-secret"
+  scope:
+    singleNamespace: true
+    watchNamespace: "gha-arc-dna"

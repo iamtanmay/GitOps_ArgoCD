@@ -1,0 +1,32 @@
+---
+itsgsd:
+  hash: "$2y$12$29JXS4wLIAvsMsFP/4L6nuLIfFOtYpCX8iMdAEE8D9IMW/53fnW5e"
+  reserved: false
+  hidden: false
+  backend_roles:
+    - ""
+  attributes: {}
+  opendistro_security_roles: []
+  static: false
+_meta:
+  type: "internalusers"
+  config_version: 2
+admin:
+  hash: "$2y$12$rA/4QyrsdpZ0zQ2Q2LoIZOAlZC83TDvRlKg488evMfVCtgVAg6aqe"
+  reserved: true
+  hidden: false
+  backend_roles:
+    - "admin"
+  attributes: {}
+  description: "Admin user"
+  opendistro_security_roles: []
+  static: false
+kibanaserver:
+  hash: "$2y$12$l3NEyOtYU48k/o58nCBiq.CnhXJjn80HSzS8Cy/74MKPNM3cDmtaC"
+  reserved: true
+  hidden: false
+  backend_roles: []
+  attributes: {}
+  description: "Kibanaserver user"
+  opendistro_security_roles: []
+  static: false
