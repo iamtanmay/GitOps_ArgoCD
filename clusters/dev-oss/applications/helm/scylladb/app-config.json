@@ -1,6 +1,0 @@
-{
-    "namespace": "scylla-operator",
-    "syncOptions": {
-        "CreateNamespace": true
-    }
-}

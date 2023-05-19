@@ -1,6 +1,0 @@
-{
-    "namespace": "oss-airflow",
-    "syncOptions": {
-        "CreateNamespace": true
-    }
-}

@@ -1,6 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-resources:
-  - dev-osp-helm-appset.yaml
-  - dev-osp-kustomize-appset.yaml

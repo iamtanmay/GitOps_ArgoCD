@@ -1,6 +1,0 @@
-{
-    "namespace": "osp-redpanda",
-    "syncOptions": {
-        "CreateNamespace": true
-    }
-}

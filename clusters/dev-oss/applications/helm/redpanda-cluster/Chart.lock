@@ -1,6 +1,0 @@
-dependencies:
-- name: redpanda
-  repository: https://artifactory.dhl.com/artifactory/redpanda-helm-remote/
-  version: 4.0.14
-digest: sha256:b1131a2906e0a7ceff315ee292330f165f4c3b6a10f8fd1de512df4a6e8ccf1c
-generated: "2023-05-03T10:37:49.700409819+02:00"
