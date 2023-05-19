@@ -1,2 +1,1 @@
-# oss-gitops
-ArgoCD GitOps repo
+# ArgoCD GitOps repo
