@@ -1,0 +1,6 @@
+# unencrypted secrets can be stored with the `-unenc.yaml` suffix to be ignored
+.idea/*
+**/*-unenc.yaml
+**/*-Secrets.yaml
+**/certs/**
+**/*.properties
