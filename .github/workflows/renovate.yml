@@ -1,0 +1,50 @@
+name: Renovate
+
+on:
+  schedule:
+    # run every hour on the half hour
+    - cron: "30 * * * *"
+
+  workflow_dispatch:
+    # run on demand
+    inputs:
+      debug:
+        description: "Enable debug mode"
+        required: false
+        default: false
+        type: boolean
+      dry-run:
+        description: "Enable dry-run mode"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  renovate:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get GitHub App token
+        uses: dhl-actions/get-github-app-token@v0.1.1
+        id: github-app-token
+        with:
+          # if the managed repository is in a different organization, you'll
+          # have to manually set the owner (i.e. the organization name) here for
+          # the `login` input value
+          login: ${{ github.repository_owner }}
+          app_id: ${{ secrets.RENOVATE_APP_ID }}
+          private_key: ${{ secrets.RENOVATE_APP_KEY }}
+
+      - uses: dhl-actions-incubation/renovate-action@v0
+        with:
+          token: ${{ steps.github-app-token.outputs.token }}
+          debug: ${{ github.event.inputs.debug || false }}
+          additional-config-file: renovate.js
+        env:
+          # Toggle dry-run mode
+          RENOVATE_DRY_RUN: ${{ github.event.inputs.dry-run || false }}
+          # The following are used in the renovate.js config file to
+          # authenticate with Artifactory and GitHub
+          SECRET_ARTIFACTORY_USERNAME: ${{ secrets.SECRET_ARTIFACTORY_USERNAME }}
+          SECRET_ARTIFACTORY_PASSWORD: ${{ secrets.SECRET_ARTIFACTORY_PASSWORD }}
