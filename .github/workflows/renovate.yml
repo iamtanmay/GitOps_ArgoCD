@@ -1,9 +1,9 @@
 name: Renovate
 
 on:
-  schedule:
+  #schedule:
     # run every hour on the half hour
-    - cron: "30 * * * *"
+    #- cron: "30 * * * *"
 
   workflow_dispatch:
     # run on demand
